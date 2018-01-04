@@ -25,3 +25,9 @@
 [submodule "houdini/hou-hdk-sop-vhacd-toolkit"]
 	path = houdini/hou-hdk-sop-vhacd-toolkit
 	url = https://github.com/sebastianswann/hou-hdk-sop-vhacd-toolkit
+[submodule "unity/unity-screenshot"]
+	path = unity/unity-screenshot
+	url = https://github.com/sebastianswann/unity-screenshot
+[submodule "utils/test-meshes"]
+	path = utils/test-meshes
+	url = https://github.com/sebastianswann/test-meshes
