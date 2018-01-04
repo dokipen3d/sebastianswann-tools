@@ -7,3 +7,21 @@
 [submodule "houdini/hou-hdk-sop-parameters"]
 	path = houdini/hou-hdk-sop-parameters
 	url = https://github.com/sebastianswann/hou-hdk-sop-parameters
+[submodule "houdini/hou-hdk-sop-straighten"]
+	path = houdini/hou-hdk-sop-straighten
+	url = https://github.com/sebastianswann/hou-hdk-sop-straighten
+[submodule "houdini/hou-hdk-sop-perfectcircle"]
+	path = houdini/hou-hdk-sop-perfectcircle
+	url = https://github.com/sebastianswann/hou-hdk-sop-perfectcircle
+[submodule "houdini/hou-hdk-sop-edgelength"]
+	path = houdini/hou-hdk-sop-edgelength
+	url = https://github.com/sebastianswann/hou-hdk-sop-edgelength
+[submodule "houdini/hou-hdk-sop-filtergroup"]
+	path = houdini/hou-hdk-sop-filtergroup
+	url = https://github.com/sebastianswann/hou-hdk-sop-filtergroup
+[submodule "houdini/hou-hdk-sop-mergeextended"]
+	path = houdini/hou-hdk-sop-mergeextended
+	url = https://github.com/sebastianswann/hou-hdk-sop-mergeextended
+[submodule "houdini/hou-hdk-sop-vhacd-toolkit"]
+	path = houdini/hou-hdk-sop-vhacd-toolkit
+	url = https://github.com/sebastianswann/hou-hdk-sop-vhacd-toolkit
