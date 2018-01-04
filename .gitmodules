@@ -1,0 +1,9 @@
+[submodule "houdini/hou-hdk-common"]
+	path = houdini/hou-hdk-common
+	url = https://github.com/sebastianswann/hou-hdk-common
+[submodule "houdini/hou-hdk-sop-template"]
+	path = houdini/hou-hdk-sop-template
+	url = https://github.com/sebastianswann/hou-hdk-sop-template
+[submodule "houdini/hou-hdk-sop-parameters"]
+	path = houdini/hou-hdk-sop-parameters
+	url = https://github.com/sebastianswann/hou-hdk-sop-parameters
