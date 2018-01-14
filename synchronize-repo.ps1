@@ -52,21 +52,21 @@ if (!$canContinue) { return; }
 # execute GIT commands
 cd $this
 
-Write-Host 'Reseting main repo...'
+Write-Host 'Reseting main repo...' -ForegroundColor Yellow
 & git reset --hard
 
-Write-Host 'Cleaning main repo...'
+Write-Host 'Cleaning main repo...' -ForegroundColor Yellow
 & git clean -f -d -x
 
-Write-Host 'Pulling latest main repo changes...'
+Write-Host 'Pulling latest main repo changes...' -ForegroundColor Yellow
 & git fetch origin
 & git reset --hard origin/master
 
-Write-Host 'Reseting submodules...'
+Write-Host 'Reseting submodules...' -ForegroundColor Yellow
 & git submodule foreach --recursive git reset --hard
 
-Write-Host 'Cleaning submodules...'
+Write-Host 'Cleaning submodules...' -ForegroundColor Yellow
 & git submodule foreach --recursive git clean -f -d -x
 
-Write-Host 'Pulling latest submodules changes...'
+Write-Host 'Pulling latest submodules changes...' -ForegroundColor Yellow
 & git submodule update --init --recursive --remote
