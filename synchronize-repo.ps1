@@ -52,6 +52,11 @@ if (!$canContinue) { return; }
 # execute GIT commands
 cd $this
 
+Write-Host 'Reseting repositories...'
 & git submodule foreach --recursive git reset --hard
+
+Write-Host 'Removing alien files...'
 & git submodule foreach --recursive git clean -f -d -x
+
+Write-Host 'Pulling latest changes...'
 & git submodule update --init --recursive --remote
