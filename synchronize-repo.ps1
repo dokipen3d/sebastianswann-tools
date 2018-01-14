@@ -52,4 +52,6 @@ if (!$canContinue) { return; }
 # execute GIT commands
 cd $this
 
-& git submodule foreach --recursive git reset --hard | git clean -f -d -x | git submodule update --init --recursive
+& git submodule foreach --recursive git reset --hard
+& git submodule foreach --recursive git clean -f -d -x
+& git submodule update --init --recursive --remote
