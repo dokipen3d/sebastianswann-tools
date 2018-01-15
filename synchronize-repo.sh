@@ -47,6 +47,7 @@ if [ "$?" != "0" ]; then
     exit
 fi
 
+# make sure we have GIT LFS available
 git lfs version > /dev/null 2>&1
 if [ "$?" != "0" ]; then
     echo "Git LFS support seems to be unavailable. Make sure that you have downloaded and installed:\n- Git LFS extension: 'https://git-lfs.github.com/'"

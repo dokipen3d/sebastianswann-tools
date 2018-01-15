@@ -37,17 +37,22 @@ MAIN                                                               |
 ----------------------------------------------------------------- #>
 
 # make sure we have GIT shell available
-$canContinue = $false
 try
-{
-    & git --version | Out-Null
-    $canContinue = $true
-}
+{ & git --version | Out-Null }
 catch [System.Management.Automation.CommandNotFoundException]
 {
-    Write-Host ("Git support seems to be unavailable. Make sure that you have downloaded and installed:`n- Git Shell extension: {0}`n- Git LFS extension: {1}" -f 'https://git-scm.com/', 'https://git-lfs.github.com/')
+    Write-Host ("Git support seems to be unavailable. Make sure that you have downloaded and installed:`n- Git Shell extension: {0}" -f 'https://git-scm.com/')
+	return;
 }
-if (!$canContinue) { return; }
+
+# make sure we have GIT LFS available
+try
+{ & git lfs version | Out-Null }
+catch [System.Management.Automation.CommandNotFoundException]
+{
+    Write-Host ("Git LFS support seems to be unavailable. Make sure that you have downloaded and installed:`n- Git LFS extension: {0}" -f 'https://git-lfs.github.com/')
+	return;
+}
 
 # execute GIT commands
 cd $this
