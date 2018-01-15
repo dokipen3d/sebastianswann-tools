@@ -45,7 +45,7 @@ WriteErrorMessage ()
 {
     printf "${RED}$1\n"
     printf "${DEFAULT}$2\n"
-    read -n 1 -s -r -p "Press any key to continue..."
+    read -n 1 -s -r -p "Press any key to continue..."; echo
 }
 
 # ------------------------------------------------------------------
