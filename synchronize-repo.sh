@@ -33,8 +33,20 @@ clear
 this=`dirname "$BASH_SOURCE"`
 
 # color codes
-YELLOW='\033[1;33m'
 DEFAULT='\033[0m'
+YELLOW='\033[1;33m'
+RED='\033[31m'
+
+# ------------------------------------------------------------------
+# HELPERS                                                          |
+# ------------------------------------------------------------------
+
+WriteErrorMessage () 
+{
+    printf "${RED}$1\n"
+    printf "${DEFAULT}$2\n"
+    read -n 1 -s -r -p "Press any key to continue..."
+}
 
 # ------------------------------------------------------------------
 # MAIN                                                             |
@@ -43,14 +55,14 @@ DEFAULT='\033[0m'
 # make sure we have GIT shell available
 git --version > /dev/null 2>&1
 if [ "$?" != "0" ]; then
-    echo "Git support seems to be unavailable. Make sure that you have downloaded and installed:\n- Git Shell extension: 'https://git-scm.com/'"
+    WriteErrorMessage "Git support seems to be unavailable." "Make sure that you have downloaded and installed:\n- Git Shell extension: https://git-scm.com/\n- Git LFS extension: https://git-lfs.github.com/"
     exit
 fi
 
 # make sure we have GIT LFS available
 git lfs version > /dev/null 2>&1
 if [ "$?" != "0" ]; then
-    echo "Git LFS support seems to be unavailable. Make sure that you have downloaded and installed:\n- Git LFS extension: 'https://git-lfs.github.com/'"
+    WriteErrorMessage "Git LFS support seems to be unavailable." "Make sure that you have downloaded and installed:\n- Git LFS extension: https://git-lfs.github.com/"
     exit
 fi
 
