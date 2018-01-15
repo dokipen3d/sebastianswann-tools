@@ -33,6 +33,31 @@ Clear-Host
 $this = (Split-Path -Parent ($MyInvocation.MyCommand.Path))
 
 <# -----------------------------------------------------------------
+HELPERS                                                            |
+----------------------------------------------------------------- #>
+
+function Write-ErrorMessage
+{ 
+	param
+	(
+		[Parameter(Mandatory=$true)] 
+		[System.Management.Automation.Host.PSHost] $App,
+		
+		[Parameter(Mandatory=$true)]
+		[string] $ErrorMessage,
+		
+		[string] $Message
+	)
+	
+	
+	if ($ErrorMessage.Length -gt 0) { Write-Host $ErrorMessage -ForegroundColor Red }
+	if ($Message.Length -gt 0) { Write-Host $Message }
+	
+	Write-Host "Press any key to continue ..."
+	$App.UI.RawUI.ReadKey("NoEcho,IncludeKeyDown") | Out-Null
+}
+
+<# -----------------------------------------------------------------
 MAIN                                                               |
 ----------------------------------------------------------------- #>
 
@@ -41,8 +66,8 @@ try
 { & git --version | Out-Null }
 catch [System.Management.Automation.CommandNotFoundException]
 {
-    Write-Host ("Git support seems to be unavailable. Make sure that you have downloaded and installed:`n- Git Shell extension: {0}" -f 'https://git-scm.com/')
-	return;
+	Write-ErrorMessage -App $host -ErrorMessage 'Git support seems to be unavailable.' -Message ("Make sure that you have downloaded and installed:`n- Git Shell extension: {0}`n- Git LFS extension: {1}" -f 'https://git-scm.com/', 'https://git-lfs.github.com/')
+	return
 }
 
 # make sure we have GIT LFS available
@@ -50,8 +75,8 @@ try
 { & git lfs version | Out-Null }
 catch [System.Management.Automation.CommandNotFoundException]
 {
-    Write-Host ("Git LFS support seems to be unavailable. Make sure that you have downloaded and installed:`n- Git LFS extension: {0}" -f 'https://git-lfs.github.com/')
-	return;
+	Write-ErrorMessage -App $host -ErrorMessage 'Git LFS support seems to be unavailable.' -Message ("Make sure that you have downloaded and installed:`n- Git LFS extension: {0}" -f 'https://git-lfs.github.com/')
+	return
 }
 
 # execute GIT commands
