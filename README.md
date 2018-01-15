@@ -2,7 +2,7 @@
 - [ ] add explanation what is purpose of this repository
 - [ ] connect web pages of all submodules
 
-# How to install #
+# How to install # (work in progress)
 
 You need to have installed:
 * [Git](https://git-scm.com/) version at least >= 2.14
