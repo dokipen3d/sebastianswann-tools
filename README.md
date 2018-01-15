@@ -15,3 +15,5 @@ Open your operating system command line (CMD or Powershell on Windows, Terminal 
 Go to the repository directory and run:
 * `synchronize-repo.ps1` for Windows operating system
 * `synchronize-repo.sh` for MacOS/Linux operating systems
+
+Last step should be performed every time you want to pull latest changes for all submodules.
