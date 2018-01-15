@@ -9,7 +9,7 @@ You need to have installed:
 * [Git](https://git-scm.com/) version at least >= 2.14
 * [Git LFS](https://git-lfs.github.com/) version at least >= 2.3.4
 
-Open your operating system command line (CMD or Powershell on Windows, Terminal on MacOS/Linux) and write:
+Open your operating system command line (CMD or Powershell on Windows, Terminal on MacOS/Linux) and write:  
 ```git clone https://github.com/sebastianswann/sebastianswann-tools```
 
 Go to the repository directory and run:
