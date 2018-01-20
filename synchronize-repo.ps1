@@ -86,7 +86,7 @@ Write-Host 'Reseting main repo...' -ForegroundColor Yellow
 & git reset --hard
 
 Write-Host 'Cleaning main repo...' -ForegroundColor Yellow
-& git clean -f -d -x
+& git clean -f -f -d -x
 
 Write-Host 'Pulling latest main repo changes...' -ForegroundColor Yellow
 & git fetch origin
@@ -96,7 +96,7 @@ Write-Host 'Reseting submodules...' -ForegroundColor Yellow
 & git submodule foreach --recursive git reset --hard
 
 Write-Host 'Cleaning submodules...' -ForegroundColor Yellow
-& git submodule foreach --recursive git clean -f -d -x
+& git submodule foreach --recursive git clean -f -f -d -x
 
 Write-Host 'Pulling latest submodules changes...' -ForegroundColor Yellow
 & git submodule update --init --recursive --remote

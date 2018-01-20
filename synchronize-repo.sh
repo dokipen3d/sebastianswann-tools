@@ -73,7 +73,7 @@ printf "${YELLOW}Reseting main repo...\n${DEFAULT}"
 git reset --hard
 
 printf "${YELLOW}Cleaning main repo...\n${DEFAULT}"
-git clean -f -d -x
+git clean -f -f -d -x
 
 printf "${YELLOW}Pulling latest main repo changes...\n${DEFAULT}"
 git fetch origin
@@ -83,7 +83,7 @@ printf "${YELLOW}Reseting submodules...\n${DEFAULT}"
 git submodule foreach --recursive git reset --hard
 
 printf "${YELLOW}Cleaning submodules...\n${DEFAULT}"
-git submodule foreach --recursive git clean -f -d -x
+git submodule foreach --recursive git clean -f -f -d -x
 
 printf "${YELLOW}Pulling latest submodules changes...\n${DEFAULT}"
 git submodule update --init --recursive --remote
